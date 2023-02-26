@@ -1,16 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Map from "../components/Map.astro";
 ---
 
-<Layout title="Franklin Gardeners Association">
-  <main class="pt-12 main w-screen flex flex-col align-center items-center">
-    <h2 class="text-text-500 font-semibold text-2xl">Our Mission Statement</h2>
+<Layout title="May Garden Mart 2023">
+  <main class="py-12 main max-w-screen flex flex-col align-center items-center">
+    <h2 class="text-text-500 font-semibold text-2xl">May Garden Mart</h2>
     <p class="max-w-xl text-center text-text-500 font-semibold text-md italic">
-      "The Franklin Gardeners Association was formed to promote and stimulate
-      interest in gardening on both a civic and a personal level, to educate its
-      members in all aspects of gardening and to beautify the local area with
-      public gardens and displays."
+      Sponsored by the Franklin Gardeners Association
     </p>
+    <div class="w-40 mt-2 flex flex-col items-center justify-center">
+      <div class="w-full flex items-center justify-between">
+        <p>May 6th</p>
+        <p>9am - 4pm</p>
+      </div>
+      <div class="w-full flex items-center justify-between">
+        <p>May 7th</p>
+        <p>11am - 4pm</p>
+      </div>
+    </div>
+    <Map />
   </main>
 
   <style>

@@ -1,0 +1,72 @@
+---
+import Logo from "../assets/logo.png";
+type NavLink = {
+  text: string;
+  href: string;
+};
+const links: NavLink[] = [
+  {
+    text: "Home",
+    href: "/",
+  },
+  {
+    text: "About",
+    href: "/about",
+  },
+  {
+    text: "Contact",
+    href: "/contact",
+  },
+  {
+    text: "May Garden Mart 2023",
+    href: "/mart",
+  },
+  {
+    text: "Past May Garden Marts",
+    href: "/past-marts",
+  },
+];
+---
+
+<div class="flex flex-col w-full">
+  <div
+    class="px-4 flex flex-row header items-center md:items-start h-40 w-full"
+  >
+    <img src={Logo} class="w-32 h-32 brightness-150 mr-4 hidden md:block" />
+    <div class="flex flex-col items-center md:items-start w-full">
+      <h1
+        class="my-2 text-center md:text-left text-white text-3xl md:text-4xl font-semibold drop-shadow-dark"
+      >
+        <span class="text-gradient">Franklin Gardeners Association</span>
+      </h1>
+      <h4 class="text-white text-xl drop-shadow-dark font-semibold italic">
+        We just keep growing!
+      </h4>
+      <h4 class="text-white font-semibold drop-shadow-dark">Franklin, PA</h4>
+    </div>
+  </div>
+  <div
+    class="bg-bg-100 py-2 flex flex-row flex-wrap align-center justify-center w-full"
+  >
+    {
+      links.map((l) => (
+        <a
+          href={l.href}
+          class="mx-4 mb-4 text-white text-sm md:text-xl hover:underline font-semibold text-left drop-shadow-dark transition duration-100 hover:scale-110"
+        >
+          {l.text}
+        </a>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .header {
+    background-image: url("../assets/potting.jpg");
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+</style>
