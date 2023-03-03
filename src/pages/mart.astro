@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Map from "../components/Map.astro";
+import MapContainer from "../components/MapContainer";
 ---
 
 <Layout title="May Garden Mart 2023">
@@ -24,7 +24,7 @@ import Map from "../components/Map.astro";
     <div
       class="w-11/12 md:overflow-hidden overflow-scroll md:cursor-auto cursor-grab"
     >
-      <Map />
+      <MapContainer client:load />
     </div>
   </main>
 

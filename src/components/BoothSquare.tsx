@@ -1,7 +1,9 @@
 import { useState } from "react";
 import type { Booth } from "../utils";
 
-type Props = Booth;
+type Props = Booth & {
+  highlighted: number;
+};
 
 export default function BoothSquare({
   id,
@@ -10,8 +12,10 @@ export default function BoothSquare({
   width = 6,
   height = 4,
   rotation = 0,
+  text,
+  highlighted,
 }: Props) {
-  const [showTooltip, setShowTooltip] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(highlighted === id);
   const style = {
     top: `${yOffset}%`,
     left: `${xOffset}%`,
@@ -22,14 +26,14 @@ export default function BoothSquare({
   return (
     <div
       style={style}
-      className="flex align-center justify-center text-center font-semibold absolute bg-cyan-500 border-2 border-cyan-300"
+      className="pt-1 flex align-center justify-center text-center font-semibold absolute bg-cyan-500 border-2 border-cyan-300 align-middle"
       onClick={() => setShowTooltip(true)}
       onMouseOver={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
     >
-      {showTooltip && (
+      {text && (showTooltip || highlighted === id) && (
         <div className="absolute w-40 top-[-38px] bg-green-500 border-2 border-green-300">
-          {"Sample text tooltip"}
+          {text}
         </div>
       )}
       {id}
