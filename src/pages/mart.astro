@@ -4,7 +4,9 @@ import Map from "../components/Map.astro";
 ---
 
 <Layout title="May Garden Mart 2023">
-  <main class="py-12 main max-w-screen flex flex-col align-center items-center">
+  <main
+    class="py-12 main md:max-w-screen flex flex-col align-center items-center"
+  >
     <h2 class="text-text-500 font-semibold text-2xl">May Garden Mart</h2>
     <p class="max-w-xl text-center text-text-500 font-semibold text-md italic">
       Sponsored by the Franklin Gardeners Association
@@ -19,7 +21,9 @@ import Map from "../components/Map.astro";
         <p>11am - 4pm</p>
       </div>
     </div>
-    <Map />
+    <div class="w-11/12 overflow-scroll cursor-grab">
+      <Map />
+    </div>
   </main>
 
   <style>
