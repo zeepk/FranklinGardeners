@@ -26,13 +26,13 @@ export default function BoothSquare({
   return (
     <div
       style={style}
-      className="pt-1 flex align-center justify-center text-center font-semibold absolute bg-cyan-500 border-2 border-cyan-300 align-middle"
+      className="md:pt-1 flex align-center justify-center text-center font-semibold absolute bg-cyan-500 border-2 border-cyan-300 align-middle"
       onClick={() => setShowTooltip(true)}
       onMouseOver={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
     >
       {text && (showTooltip || highlighted === id) && (
-        <div className="absolute w-40 top-[-38px] bg-green-500 border-2 border-green-300">
+        <div className="p-2 absolute w-40 top-[-50px] bg-bg-100 border-2 border-pink-100">
           {text}
         </div>
       )}
