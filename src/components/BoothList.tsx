@@ -21,7 +21,7 @@ export default function BoothList({ setHighlighted, currentHighlight }: Props) {
           onMouseLeave={() => setHighlighted(0)}
         >
           <p>{t.id}.</p>
-          <p>{t.text}</p>
+          <p>{t.textOverride ?? t.name}</p>
         </div>
       ))}
     </div>

@@ -3,6 +3,7 @@ import type { Booth } from "../utils";
 
 type Props = Booth & {
   highlighted: number;
+  text: string;
 };
 
 export default function BoothSquare({
@@ -13,6 +14,7 @@ export default function BoothSquare({
   height = 4,
   rotation = 0,
   text,
+  name,
   highlighted,
 }: Props) {
   const [showTooltip, setShowTooltip] = useState(highlighted === id);
@@ -23,20 +25,30 @@ export default function BoothSquare({
     height: `${height}%`,
     transform: `rotate(${rotation}deg)`,
   };
+  const tooltipStyle = {
+    left: style.left,
+    top: `${yOffset - 5}%`,
+    transform: "none",
+  };
   return (
-    <div
-      style={style}
-      className="md:pt-1 flex align-center justify-center text-center font-semibold absolute bg-cyan-500 border-2 border-cyan-300 align-middle"
-      onClick={() => setShowTooltip(true)}
-      onMouseOver={() => setShowTooltip(true)}
-      onMouseLeave={() => setShowTooltip(false)}
-    >
+    <div className="font-semibold text-center">
       {text && (showTooltip || highlighted === id) && (
-        <div className="p-2 absolute w-40 top-[-50px] bg-bg-100 border-2 border-pink-100">
-          {text}
+        <div
+          style={tooltipStyle}
+          className="z-10 p-1 absolute w-40 bg-bg-100 border-2 border-pink-100"
+        >
+          {name ?? text}
         </div>
       )}
-      {id}
+      <div
+        style={style}
+        className="md:pt-1 flex align-center justify-center absolute bg-cyan-200 z-[1] border-2 border-cyan-300 align-middle"
+        onClick={() => setShowTooltip(true)}
+        onMouseOver={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+      >
+        <div style={{ transform: `rotate(${360 - rotation}deg)` }}>{id}</div>
+      </div>
     </div>
   );
 }
