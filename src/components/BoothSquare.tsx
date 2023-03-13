@@ -17,7 +17,7 @@ export default function BoothSquare({
   name,
   highlighted,
 }: Props) {
-  const [showTooltip, setShowTooltip] = useState(highlighted === id);
+  const [hovering, setHovering] = useState(highlighted === id);
   const style = {
     top: `${yOffset}%`,
     left: `${xOffset}%`,
@@ -30,22 +30,27 @@ export default function BoothSquare({
     top: `${yOffset - 5}%`,
     transform: "none",
   };
+  const showTooltip = hovering || highlighted === id;
   return (
     <div className="font-semibold text-center">
-      {text && (showTooltip || highlighted === id) && (
+      {text && showTooltip && (
         <div
           style={tooltipStyle}
-          className="z-10 p-1 absolute w-40 bg-bg-100 border-2 border-pink-100"
+          className="z-10 p-1 absolute w-60 bg-bg-100 border-2 border-pink-100"
         >
           {name ?? text}
         </div>
       )}
       <div
         style={style}
-        className="md:pt-1 flex align-center justify-center absolute bg-cyan-200 z-[1] border-2 border-cyan-300 align-middle"
-        onClick={() => setShowTooltip(true)}
-        onMouseOver={() => setShowTooltip(true)}
-        onMouseLeave={() => setShowTooltip(false)}
+        className={`md:pt-1 flex align-center justify-center absolute z-[1] border-2 ${
+          showTooltip
+            ? "border-pink-100 bg-bg-100"
+            : "border-cyan-300 bg-cyan-200"
+        } align-middle`}
+        onClick={() => setHovering(true)}
+        onMouseOver={() => setHovering(true)}
+        onMouseLeave={() => setHovering(false)}
       >
         <div style={{ transform: `rotate(${360 - rotation}deg)` }}>{id}</div>
       </div>

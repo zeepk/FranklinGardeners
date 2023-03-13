@@ -7,7 +7,7 @@ type Props = {
 
 export default function BoothList({ setHighlighted, currentHighlight }: Props) {
   return (
-    <div className="mb-4 md:h-[60%] h-60 overflow-y-auto flex flex-col align-center justify-start md:ml-8 w-full md:w-3/12 border-8 border-bg-500 rounded-2xl p-2 bg-bg-300">
+    <div className="mb-4 pb-12 md:h-[60%] h-60 overflow-y-auto flex flex-col align-center justify-start md:ml-8 w-full md:w-3/12 border-8 border-bg-500 rounded-2xl p-2 bg-bg-300">
       <div className="flex align-center justify-center">
         <h1 className="text-2xl font-semibold mb-2">Booths</h1>
       </div>
