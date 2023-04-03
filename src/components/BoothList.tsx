@@ -13,7 +13,8 @@ export default function BoothList({ setHighlighted, currentHighlight }: Props) {
       </div>
       {booths.map((t, i) => (
         <div
-          className={`hover:bg-bg-100 bg-bg-300 hover:font-semibold w-full flex align-center justify-between p-2 border-t-2 ${
+          key={t.id}
+          className={`text-right hover:bg-bg-100 bg-bg-300 hover:font-semibold w-full flex align-center justify-between p-2 border-t-2 ${
             i + 1 === booths.length ? "border-b-2" : ""
           } border-gray-700`}
           onClick={() => setHighlighted(t.id)}

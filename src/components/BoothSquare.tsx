@@ -10,8 +10,8 @@ export default function BoothSquare({
   id,
   xOffset,
   yOffset,
-  width = 6,
-  height = 4,
+  width = 5.2,
+  height = 3.5,
   rotation = 0,
   text,
   name,
@@ -30,7 +30,8 @@ export default function BoothSquare({
     top: `${yOffset - 5}%`,
     transform: "none",
   };
-  const showTooltip = hovering || highlighted === id;
+  const showTooltip =
+    (hovering || highlighted === id) && name && name.length > 0;
   return (
     <div className="font-semibold text-center">
       {text && showTooltip && (
@@ -43,7 +44,7 @@ export default function BoothSquare({
       )}
       <div
         style={style}
-        className={`md:pt-1 flex align-center justify-center absolute z-[1] border-2 ${
+        className={`text-sm md:pt-1 flex align-center justify-center absolute z-[1] border-2 ${
           showTooltip
             ? "border-pink-100 bg-bg-100"
             : "border-cyan-300 bg-cyan-200"
