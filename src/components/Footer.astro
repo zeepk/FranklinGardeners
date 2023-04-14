@@ -24,7 +24,7 @@ const links: NavLink[] = [
 ---
 
 <div
-  class="md:px-16 px-2 bg-purple-200 flex flex-row items-center justify-center w-screen min-h-[100px]"
+  class="md:px-16 px-2 md:py-0 py-4 bg-purple-200 flex flex-row items-center justify-center w-screen min-h-[100px]"
 >
   <p class="w-full font-semibold py-4">
     Franklin Gardeners Association {new Date().getFullYear()}
@@ -34,7 +34,7 @@ const links: NavLink[] = [
   >
     {
       links.map((l) => (
-        <a href={l.href} class={`${l.color} p-4 hover:underline`}>
+        <a href={l.href} class={`${l.color} md:p-4 p-1 hover:underline`}>
           {l.text}
         </a>
       ))

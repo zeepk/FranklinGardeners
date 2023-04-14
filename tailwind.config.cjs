@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       dropShadow: {
         dark: "0px 5px 10px black",
+        text: "0_1.2px_1.2px_rgba(0,0,0,0.8)",
       },
       colors: {
         bg: {

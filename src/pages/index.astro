@@ -10,10 +10,10 @@ import Bells from "../assets/bell.jpg";
 <Layout title="Franklin Gardeners Association">
   <main class="main max-w-screen flex flex-col align-center items-center">
     <div
-      class="md:p-12 pt-12 px-4 h-[70vh] w-full flex gap-12 md:flex-row flex-col"
+      class="md:p-12 py-12 px-4 min-h-[70vh] w-full flex gap-12 items-center md:flex-row flex-col"
     >
-      <div class="w-full md:w-7/12 flex align-center items-center">
-        <img src={GroupPhoto} alt="Group" />
+      <div class="w-full md:w-7/12 flex align-center h-full items-center">
+        <img src={GroupPhoto} alt="Group" class="max-h-10/12" />
       </div>
       <div class="flex flex-col w-full md:w-5/12 align-center justify-center">
         <h2 class="text-text-500 font-semibold text-4xl text-center mb-4">
@@ -60,7 +60,7 @@ import Bells from "../assets/bell.jpg";
         class="gap-8 lg:w-7/12 w-full h-auto lg:h-10/12 lg:relative flex flex-col items-center"
       >
         <img
-          class="lg:top-0 lg:right-[250px] lg:max-w-[300px] lg:absolute w-10/12 transition duration-100 hover:scale-110"
+          class="lg:top-0 lg:right-[250px] lg:max-w-[300px] w-full lg:absolute lg:w-10/12 transition duration-100 hover:scale-110"
           src={KidsTomatoes}
           alt="Kids eating tomatoes"
         />
@@ -110,7 +110,7 @@ import Bells from "../assets/bell.jpg";
         class="gap-8 lg:w-7/12 w-full h-auto lg:h-10/12 lg:relative flex flex-col items-center justify-center"
       >
         <img
-          class="w-10/12 transition duration-100 hover:scale-110"
+          class="w-full lg:w-10/12 transition duration-100 hover:scale-110"
           src={Bells}
           alt="bells"
         />
