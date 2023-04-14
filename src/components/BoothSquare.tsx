@@ -10,9 +10,6 @@ export default function BoothSquare({
   id,
   xOffset,
   yOffset,
-  width = 5.2,
-  height = 3.5,
-  rotation = 0,
   text,
   name,
   highlighted,
@@ -21,9 +18,8 @@ export default function BoothSquare({
   const style = {
     top: `${yOffset}%`,
     left: `${xOffset}%`,
-    width: `${width}%`,
-    height: `${height}%`,
-    transform: `rotate(${rotation}deg)`,
+    width: `4%`,
+    height: `4%`,
   };
   const tooltipStyle = {
     left: style.left,
@@ -44,7 +40,7 @@ export default function BoothSquare({
       )}
       <div
         style={style}
-        className={`text-sm md:pt-1 flex align-center justify-center absolute z-[1] border-2 ${
+        className={`text-sm pt-1 flex align-center justify-center absolute z-[1] border-2 ${
           showTooltip
             ? "border-pink-100 bg-bg-100"
             : "border-cyan-300 bg-cyan-200"
@@ -53,7 +49,7 @@ export default function BoothSquare({
         onMouseOver={() => setHovering(true)}
         onMouseLeave={() => setHovering(false)}
       >
-        <div style={{ transform: `rotate(${360 - rotation}deg)` }}>{id}</div>
+        <div>{id}</div>
       </div>
     </div>
   );

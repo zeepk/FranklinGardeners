@@ -1,16 +1,79 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import GroupPhoto from "../assets/group_photo_horizontal.jpg";
+import KidsTomatoes from "../assets/kids_tomatoes.jpg";
+import KidsSalsa from "../assets/kids_salsa.jpg";
+import KidsDrawing from "../assets/kids_drawing.jpg";
 ---
 
 <Layout title="Franklin Gardeners Association">
-  <main class="pt-12 main w-screen flex flex-col align-center items-center">
-    <h2 class="text-text-500 font-semibold text-2xl">Our Mission Statement</h2>
-    <p class="max-w-xl text-center text-text-500 font-semibold text-md italic">
-      "The Franklin Gardeners Association was formed to promote and stimulate
-      interest in gardening on both a civic and a personal level, to educate its
-      members in all aspects of gardening and to beautify the local area with
-      public gardens and displays."
-    </p>
+  <main class="main max-w-screen flex flex-col align-center items-center">
+    <div
+      class="md:p-12 pt-12 px-4 h-[70vh] w-full flex gap-12 md:flex-row flex-col"
+    >
+      <div class="w-full md:w-7/12 flex align-center items-center">
+        <img src={GroupPhoto} alt="Group" />
+      </div>
+      <div class="flex flex-col w-full md:w-5/12 align-center justify-center">
+        <h2 class="text-text-500 font-semibold text-2xl text-center">
+          Our Mission Statement
+        </h2>
+        <p
+          class="max-w-xl text-center text-text-500 font-semibold text-md italic"
+        >
+          "The Franklin Gardeners Association was formed to promote and
+          stimulate interest in gardening on both a civic and a personal level,
+          to educate its members in all aspects of gardening and to beautify the
+          local area with public gardens and displays."
+        </p>
+      </div>
+    </div>
+    <div
+      class="md:p-12 py-12 md:pb-40 pb-80 px-4 md:h-[90vh] w-full bg-bg-500 flex gap-12 md:flex-row flex-col justify-between"
+    >
+      <div
+        class="text-white md:text-left text-center flex flex-col w-full md:w-5/12 align-center justify-center"
+      >
+        <h2 class="font-semibold text-2xl mb-4">About Us</h2>
+        <p class="max-w-xl text-md mb-4">
+          The Franklin Gardeners Association was established to promote and
+          stimulate interest in gardening on both the civic and personal level.
+        </p>
+        <p class="max-w-xl text-md mb-4">
+          The Franklin Gardeners Association is very active in the community.
+          Projects include planting the lamp-posts in downtown Franklin, the
+          House and Garden tour, the Gateway Garden at the Franklin Fire
+          Station, the planters along the bike trail, and the Outdoor Learning
+          Center at Central Elementary School.
+        </p>
+        <p class="max-w-xl text-md">
+          We also sponsor the <a
+            href="/mart"
+            class="text-pink-300 hover:underline">Franklin May Garden Mart</a
+          > held on the first full weekend in May. Garden-related businesses are
+          invited to participate and sell their goods in Fountain Park.
+        </p>
+      </div>
+      <div
+        class="gap-8 md:w-7/12 w-full h-auto md:h-10/12 md:relative flex flex-col items-center"
+      >
+        <img
+          class="md:top-0 md:left-[20%] md:max-w-[300px] md:absolute w-10/12"
+          src={KidsTomatoes}
+          alt="Kids eating tomatoes"
+        />
+        <img
+          class="md:top-[30%] md:right-0 md:max-w-[300px] md:absolute"
+          src={KidsSalsa}
+          alt="Kids eating tomatoes"
+        />
+        <img
+          class="md:bottom-0 md:left-0 md:max-w-[300px] md:absolute"
+          src={KidsDrawing}
+          alt="Kids eating tomatoes"
+        />
+      </div>
+    </div>
   </main>
 
   <style>

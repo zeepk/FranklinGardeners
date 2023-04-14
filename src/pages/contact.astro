@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+type Contact = {
+  name: string;
+  title: string;
+  email: string;
+};
+
+const contacts: Contact[] = [
+  {
+    name: "Susan Blair",
+    title: "President",
+    email: "susblair@gmail.com",
+  },
+  {
+    name: "Terri Wittreich",
+    title: "Publicity",
+    email: "wingwitt@hotmail.com",
+  },
+  {
+    name: "Shirley Peters",
+    title: "Membership",
+    email: "petersshirley71@gmail.com",
+  },
+  {
+    name: "Kathie Zinz",
+    title: "Membership",
+    email: "dzinz@pp.rr.com",
+  },
+  {
+    name: "Laura Stump",
+    title: "May Garden Mart",
+    email: "lulustump@gmail.com",
+  },
+  {
+    name: "Rebecca Fletcher",
+    title: "May Garden Mart",
+    email: "rjstump@gmail.com",
+  },
+];
+---
+
+<Layout title="Franklin Gardeners Contact Information">
+  <main
+    class="md:py-12 pt-12 pb-80 px-4 main w-screen flex flex-col align-center items-center"
+  >
+    <h2 class="text-text-500 mb-16 font-semibold text-2xl">
+      Contact Information
+    </h2>
+    <div
+      class="w-full max-w-[500px] flex flex-col items-center justify-between"
+    >
+      {
+        contacts.map((contact) => (
+          <div class="flex items-center justify-between w-full py-2">
+            <div class="font-semibold">{contact.title}</div>
+            <div class="flex flex-col text-right">
+              <div class="font-semibold">{contact.name}</div>
+              <a class="hover:underline" href={`mailto:${contact.email}`}>
+                {contact.email}
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </main>
+</Layout>
