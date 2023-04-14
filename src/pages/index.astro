@@ -13,7 +13,7 @@ import Bells from "../assets/bell.jpg";
       class="md:p-12 py-12 px-4 min-h-[70vh] w-full flex gap-12 items-center md:flex-row flex-col"
     >
       <div class="w-full md:w-7/12 flex align-center h-full items-center">
-        <img src={GroupPhoto} alt="Group" class="max-h-10/12" />
+        <img src={GroupPhoto} alt="Group" class="max-h-10/12 transition duration-100 hover:scale-110" />
       </div>
       <div class="flex flex-col w-full md:w-5/12 align-center justify-center">
         <h2 class="text-text-500 font-semibold text-4xl text-center mb-4">
@@ -31,7 +31,7 @@ import Bells from "../assets/bell.jpg";
     </div>
 
     <div
-      class="lg:p-12 py-12 lg:pb-40 pb-80 px-4 lg:h-[90vh] w-full bg-bg-500 flex gap-12 lg:flex-row flex-col justify-between"
+      class="lg:p-12 py-12 pb-40 px-4 lg:h-[90vh] w-full bg-bg-500 flex gap-12 lg:flex-row flex-col justify-between"
     >
       <div
         class="text-white lg:text-left text-center flex flex-col w-full lg:w-5/12 items-center justify-center"
@@ -51,7 +51,7 @@ import Bells from "../assets/bell.jpg";
         <p class="max-w-xl text-xl">
           We also sponsor the <a
             href="/mart"
-            class="text-pink-300 hover:underline">Franklin May Garden Mart</a
+            class="text-pink-300 underline hover:text-pink-200">Franklin May Garden Mart</a
           > held on the first full weekend in May. Garden-related businesses are
           invited to participate and sell their goods in Fountain Park.
         </p>
@@ -81,7 +81,16 @@ import Bells from "../assets/bell.jpg";
       class="lg:p-12 py-12 lg:pb-40 pb-80 px-4 lg:h-[90vh] w-full bg-bg-300 flex gap-12 lg:flex-row flex-col justify-between"
     >
       <div
-        class="text-text-500 lg:text-left text-center flex flex-col w-full lg:w-5/12 items-center justify-center"
+        class="gap-8 lg:w-7/12 w-full h-auto lg:h-10/12 lg:relative flex flex-col items-center justify-center"
+      >
+        <img
+          class="w-full lg:w-10/12 transition duration-100 hover:scale-110"
+          src={Bells}
+          alt="bells"
+        />
+      </div>
+      <div
+        class="text-text-500 lg:text-right text-center flex flex-col w-full lg:w-5/12 items-center justify-center"
       >
         <h2 class="font-semibold text-4xl mb-4">Our History</h2>
         <p class="max-w-xl text-xl mb-4">
@@ -105,15 +114,6 @@ import Bells from "../assets/bell.jpg";
           begun. Both projects are very successful and now well known in the
           tri-state region.
         </p>
-      </div>
-      <div
-        class="gap-8 lg:w-7/12 w-full h-auto lg:h-10/12 lg:relative flex flex-col items-center justify-center"
-      >
-        <img
-          class="w-full lg:w-10/12 transition duration-100 hover:scale-110"
-          src={Bells}
-          alt="bells"
-        />
       </div>
     </div>
   </main>

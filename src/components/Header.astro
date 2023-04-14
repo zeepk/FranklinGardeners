@@ -13,7 +13,7 @@ const links: NavLink[] = [
     href: "/",
   },
   {
-    text: "Contact",
+    text: "People",
     href: "/contact",
   },
   {
@@ -53,16 +53,16 @@ const socials: NavLink[] = [
     </div>
   </div>
   <div
-    class="bg-bg-100 p-2 flex flex-row flex-wrap align-center justify-center md:justify-between w-full"
+    class="bg-bg-100 py-2 px-0 md:px-4 flex flex-row flex-wrap align-center justify-between w-full"
   >
     <div
-      class="flex flex-row flex-wrap align-center justify-center md:justify-between"
+      class="flex md:flex-row flex-col flex-wrap align-center justify-between"
     >
       {
         links.map((l) => (
           <a
             href={l.href}
-            class="mx-4 mb-2 text-white text-sm md:text-xl hover:underline font-semibold text-left drop-shadow-[0_2.8px_2.8px_rgba(0,0,0,1)] transition duration-100 hover:scale-110"
+            class="mx-4 mb-2 text-white text-md md:text-xl hover:underline font-semibold text-left drop-shadow-[0_2.8px_2.8px_rgba(0,0,0,1)] transition duration-100 hover:scale-110"
           >
             {l.text}
           </a>
@@ -70,15 +70,16 @@ const socials: NavLink[] = [
       }
     </div>
     <div
-      class="flex flex-row flex-wrap align-center justify-center md:justify-between"
+      class="flex flex-col md:flex-row flex-wrap align-center justify-center md:justify-between"
     >
       {
         socials.map((l) => (
           <a
             href={l.href}
-            class="mx-4 text-white text-sm md:text-xl hover:underline font-semibold text-left drop-shadow-[0_2.8px_2.8px_rgba(0,0,0,1)] transition duration-100 hover:scale-110"
+            class="mx-4 my-2 md:my-0 text-white text-sm md:text-xl hover:underline font-semibold text-left drop-shadow-[0_2.8px_2.8px_rgba(0,0,0,1)] transition duration-100 hover:scale-110"
+	    title={l.text}
           >
-            <img src={l.logo} class="h-8" />
+            <img src={l.logo} class="h-8" alt={l.text} />
           </a>
         ))
       }

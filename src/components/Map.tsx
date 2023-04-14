@@ -14,17 +14,20 @@ export default function Map({ selectedBoothId }: Props) {
           src={RestroomSymbol}
           className="absolute top-[110px] right-[20px] w-10 h-10"
         />
-        {booths.map((t, i) => (
-          <BoothSquare
-            key={`booth-${i}`}
-            id={i + 1}
-            xOffset={t.xOffset}
-            yOffset={t.yOffset}
-            text={t.textOverride ?? (i + 1).toString()}
-            name={t.name}
-            highlighted={selectedBoothId}
-          />
-        ))}
+        {booths
+          .filter((t) => t.name)
+          .map((t, i) => (
+            <BoothSquare
+              key={`booth-${i}`}
+              id={i + 1}
+              xOffset={t.xOffset}
+              yOffset={t.yOffset}
+              text={t.textOverride ?? (i + 1).toString()}
+              name={t.name}
+              description={t.description}
+              highlighted={selectedBoothId}
+            />
+          ))}
       </div>
     </div>
   );

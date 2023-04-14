@@ -12,6 +12,7 @@ export default function BoothSquare({
   yOffset,
   text,
   name,
+  description,
   highlighted,
 }: Props) {
   const [hovering, setHovering] = useState(highlighted === id);
@@ -22,20 +23,25 @@ export default function BoothSquare({
     height: `4%`,
   };
   const tooltipStyle = {
-    left: style.left,
-    top: `${yOffset - 5}%`,
+    left: `${xOffset > 70 ? xOffset - 20 : xOffset}%`,
+    top: `${
+      yOffset < 20
+        ? yOffset + 5
+        : yOffset - (description ? 10 + description.length / 17 : 8)
+    }%`,
     transform: "none",
   };
   const showTooltip =
     (hovering || highlighted === id) && name && name.length > 0;
   return (
-    <div className="font-semibold text-center">
+    <div className="text-left">
       {text && showTooltip && (
         <div
           style={tooltipStyle}
-          className="z-10 p-1 absolute w-60 bg-bg-100 border-2 border-pink-100"
+          className="z-10 p-2 absolute w-80 bg-bg-100 border-2 border-pink-100"
         >
-          {name ?? text}
+          <p className="font-semibold text-xl mb-2">{name ?? text}</p>
+          <p className="font-normal">{description ?? ""}</p>
         </div>
       )}
       <div

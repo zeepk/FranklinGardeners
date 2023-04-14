@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 type Contact = {
   name: string;
   title: string;
-  email: string;
+  email?: string;
 };
 
 const contacts: Contact[] = [
@@ -39,17 +39,32 @@ const contacts: Contact[] = [
     email: "rjstump@gmail.com",
   },
 ];
+
+const members: Contact[] = [
+   { name: 'Susie Blair', title: 'President' },
+  { name: 'Barry Wilson', title: 'Vice President' },
+  { name: 'Susan Hilton', title: 'Secretary' },
+  { name: 'Cindi Ruditis', title: 'Treasurer' },
+  { name: 'Shirley Peters', title: 'Membership' },
+  { name: 'Kathie Zinz', title: 'Membership' },
+  { name: 'Lil Gammello', title: 'Ways & Means' },
+  { name: 'Donna Ostereid', title: 'Ways & Means' },
+  { name: 'Rebecca Witherup', title: 'Newsletter' },
+  { name: 'Michelle Reck', title: 'Newsletter' },
+  { name: 'Terri Wittreich', title: 'Publicity & Promotion' },
+  { name: 'Rebecca Witherup', title: 'Publicity & Promotion' }
+];
 ---
 
 <Layout title="Franklin Gardeners Contact Information">
   <main
-    class="md:py-12 pt-12 pb-80 px-4 main w-screen flex flex-col align-center items-center"
+    class="md:py-12 pt-12 mb-80 px-4 main w-screen flex flex-col align-center items-center"
   >
-    <h2 class="text-text-500 mb-16 font-semibold text-2xl">
+    <h2 class="text-text-500 mb-16 text-center font-semibold text-4xl">
       Contact Information
     </h2>
     <div
-      class="w-full mb-8 max-w-[500px] flex flex-col items-center justify-between"
+      class="w-full mb-8 max-w-[500px] flex flex-col text-xl items-center justify-between"
     >
       {
         contacts.map((contact) => (
@@ -57,7 +72,7 @@ const contacts: Contact[] = [
             <div class="font-semibold">{contact.title}</div>
             <div class="flex flex-col text-right">
               <div class="font-semibold">{contact.name}</div>
-              <a class="hover:underline" href={`mailto:${contact.email}`}>
+              <a class="hover:underline font-normal text-lg md:text-xl" href={`mailto:${contact.email}`}>
                 {contact.email}
               </a>
             </div>
@@ -72,5 +87,22 @@ const contacts: Contact[] = [
       <br />
       Franklin, PA 16323
     </p>
+    <h2 class="text-text-500 my-16 font-semibold text-center text-4xl">
+      2023 Board of Directors
+    </h2>
+    <div
+      class="w-full mb-8 max-w-[500px] flex flex-col text-xl items-center justify-between"
+    >
+      {
+        members.map((contact) => (
+          <div class="flex items-center justify-between w-full py-2">
+            <div class="font-semibold">{contact.title}</div>
+            <div class="flex flex-col text-right">
+              <div class="font-semibold">{contact.name}</div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
   </main>
 </Layout>

@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         bg: {
           100: "#e595a4",
-          300: "#9CBFA7",
+          300: "#b9cfc0",
           500: "#536E58",
         },
         text: {
