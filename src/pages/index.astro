@@ -4,6 +4,7 @@ import GroupPhoto from "../assets/group_photo_horizontal.jpg";
 import KidsTomatoes from "../assets/kids_tomatoes.jpg";
 import KidsSalsa from "../assets/kids_salsa.jpg";
 import KidsDrawing from "../assets/kids_drawing.jpg";
+import Bells from "../assets/bell.jpg";
 ---
 
 <Layout title="Franklin Gardeners Association">
@@ -15,11 +16,11 @@ import KidsDrawing from "../assets/kids_drawing.jpg";
         <img src={GroupPhoto} alt="Group" />
       </div>
       <div class="flex flex-col w-full md:w-5/12 align-center justify-center">
-        <h2 class="text-text-500 font-semibold text-2xl text-center">
+        <h2 class="text-text-500 font-semibold text-4xl text-center mb-4">
           Our Mission Statement
         </h2>
         <p
-          class="max-w-xl text-center text-text-500 font-semibold text-md italic"
+          class="max-w-xl text-center text-text-500 font-semibold text-xl italic"
         >
           "The Franklin Gardeners Association was formed to promote and
           stimulate interest in gardening on both a civic and a personal level,
@@ -28,25 +29,26 @@ import KidsDrawing from "../assets/kids_drawing.jpg";
         </p>
       </div>
     </div>
+
     <div
-      class="md:p-12 py-12 md:pb-40 pb-80 px-4 md:h-[90vh] w-full bg-bg-500 flex gap-12 md:flex-row flex-col justify-between"
+      class="lg:p-12 py-12 lg:pb-40 pb-80 px-4 lg:h-[90vh] w-full bg-bg-500 flex gap-12 lg:flex-row flex-col justify-between"
     >
       <div
-        class="text-white md:text-left text-center flex flex-col w-full md:w-5/12 align-center justify-center"
+        class="text-white lg:text-left text-center flex flex-col w-full lg:w-5/12 items-center justify-center"
       >
-        <h2 class="font-semibold text-2xl mb-4">About Us</h2>
-        <p class="max-w-xl text-md mb-4">
+        <h2 class="font-semibold text-4xl mb-4">About Us</h2>
+        <p class="max-w-xl text-xl mb-4">
           The Franklin Gardeners Association was established to promote and
           stimulate interest in gardening on both the civic and personal level.
         </p>
-        <p class="max-w-xl text-md mb-4">
+        <p class="max-w-xl text-xl mb-4">
           The Franklin Gardeners Association is very active in the community.
           Projects include planting the lamp-posts in downtown Franklin, the
           House and Garden tour, the Gateway Garden at the Franklin Fire
           Station, the planters along the bike trail, and the Outdoor Learning
           Center at Central Elementary School.
         </p>
-        <p class="max-w-xl text-md">
+        <p class="max-w-xl text-xl">
           We also sponsor the <a
             href="/mart"
             class="text-pink-300 hover:underline">Franklin May Garden Mart</a
@@ -55,22 +57,62 @@ import KidsDrawing from "../assets/kids_drawing.jpg";
         </p>
       </div>
       <div
-        class="gap-8 md:w-7/12 w-full h-auto md:h-10/12 md:relative flex flex-col items-center"
+        class="gap-8 lg:w-7/12 w-full h-auto lg:h-10/12 lg:relative flex flex-col items-center"
       >
         <img
-          class="md:top-0 md:left-[20%] md:max-w-[300px] md:absolute w-10/12"
+          class="lg:top-0 lg:right-[250px] lg:max-w-[300px] lg:absolute w-10/12 transition duration-100 hover:scale-110"
           src={KidsTomatoes}
           alt="Kids eating tomatoes"
         />
         <img
-          class="md:top-[30%] md:right-0 md:max-w-[300px] md:absolute"
+          class="lg:block hidden lg:top-[300px] lg:right-0 lg:max-w-[300px] lg:absolute transition duration-100 hover:scale-110"
           src={KidsSalsa}
           alt="Kids eating tomatoes"
         />
         <img
-          class="md:bottom-0 md:left-0 md:max-w-[300px] md:absolute"
+          class="lg:block hidden lg:top-[500px] lg:right-[280px] lg:max-w-[300px] lg:absolute transition duration-100 hover:scale-110"
           src={KidsDrawing}
           alt="Kids eating tomatoes"
+        />
+      </div>
+    </div>
+
+    <div
+      class="lg:p-12 py-12 lg:pb-40 pb-80 px-4 lg:h-[90vh] w-full bg-bg-300 flex gap-12 lg:flex-row flex-col justify-between"
+    >
+      <div
+        class="text-text-500 lg:text-left text-center flex flex-col w-full lg:w-5/12 items-center justify-center"
+      >
+        <h2 class="font-semibold text-4xl mb-4">Our History</h2>
+        <p class="max-w-xl text-xl mb-4">
+          The Franklin Gardener' Association was formed in 1999 by a small group
+          of Franklin citizens. Since its humble beginnings the club has grown
+          to be an integral part of the Franklin community. The overwhelming
+          support from area businesses and community members has been paramount
+          to the success of the association.
+        </p>
+        <p class="max-w-xl text-xl mb-4">
+          Some of the earlier projects included planting daffodil bulbs at Two
+          Mile Run County Park and the Meditation Garden at the former UPMC
+          Northwest West Unit. FGA quickly progressed to larger projects
+          throughout Franklin.
+        </p>
+        <p class="max-w-xl text-xl">
+          In 2001 the association held their first May Garden Mart in downtown
+          Franklin's West Park. Originally a one day event, it expanded to two
+          days in 2007 in response to its success and requests made by the
+          participating vendors. In 2004 the semi-annual Home & Garden Tour was
+          begun. Both projects are very successful and now well known in the
+          tri-state region.
+        </p>
+      </div>
+      <div
+        class="gap-8 lg:w-7/12 w-full h-auto lg:h-10/12 lg:relative flex flex-col items-center justify-center"
+      >
+        <img
+          class="w-10/12 transition duration-100 hover:scale-110"
+          src={Bells}
+          alt="bells"
         />
       </div>
     </div>
