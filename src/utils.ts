@@ -18,36 +18,36 @@ export const booths: Booth[] = [
   },
   {
     id: 2,
-    xOffset: 17,
+    xOffset: 14,
     yOffset: 85,
     name: "Wyattville Gardens",
     description: "Shrubs, trees, perennials, annuals, garden décor",
   },
   {
     id: 3,
-    xOffset: 25,
+    xOffset: 19,
     yOffset: 85,
     name: "Wyattville Gardens",
     description: "Shrubs, trees, perennials, annuals, garden décor",
   },
   {
     id: 4,
-    xOffset: 36,
+    xOffset: 46,
     yOffset: 85,
     name: "",
     description: "",
   },
   {
     id: 5,
-    xOffset: 44,
+    xOffset: 52,
     yOffset: 85,
     name: "Anderson's Florist & Greenhouse",
     description: "Annuals, perennials, shrubs, trees, herbs",
   },
   {
     id: 6,
-    xOffset: 52,
-    yOffset: 85,
+    xOffset: 57,
+    yOffset: 86,
     name: "Anderson's Florist & Greenhouse",
     description: "Annuals, perennials, shrubs, trees, herbs",
   },
@@ -402,7 +402,7 @@ export const booths: Booth[] = [
   },
   {
     id: 55,
-    xOffset: 8,
+    xOffset: 10,
     yOffset: 12,
     name: "All American Gutter Protection",
     description: "Gutter protection company offering free in-home estimates",
@@ -410,7 +410,7 @@ export const booths: Booth[] = [
   {
     id: 56,
     xOffset: 9,
-    yOffset: 21.5,
+    yOffset: 22,
     name: "Franklin Shade Tree Commission",
     description:
       "Displays of tree inscets, diseases, information concerning planting, culling, city tree removal",
@@ -439,15 +439,15 @@ export const booths: Booth[] = [
   },
   {
     id: 60,
-    xOffset: 9,
-    yOffset: 30,
+    xOffset: 10,
+    yOffset: 31,
     name: "Deets Sugar House",
     description:
       "Candy apples, dipped pretzel rods, handmade fudge, candies, nuts, coffees, & teas, fries, tenders, burgers, hot dogs, etc.",
   },
   {
     id: 61,
-    xOffset: 9,
+    xOffset: 10,
     yOffset: 36.5,
     name: "Deets Sugar House",
     description:

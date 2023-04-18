@@ -1,6 +1,6 @@
 import BoothSquare from "./BoothSquare";
 import { booths } from "../utils";
-import BlankMap from "../assets/map.png";
+import BlankMap from "../assets/map2.png";
 import RestroomSymbol from "../assets/restroom.png";
 
 type Props = { selectedBoothId: number };
@@ -19,7 +19,7 @@ export default function Map({ selectedBoothId }: Props) {
           .map((t, i) => (
             <BoothSquare
               key={`booth-${i}`}
-              id={i + 1}
+              id={t.id}
               xOffset={t.xOffset}
               yOffset={t.yOffset}
               text={t.textOverride ?? (i + 1).toString()}
