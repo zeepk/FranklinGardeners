@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 
 type Contact = {
-  name: string;
+  name?: string;
   title: string;
   email?: string;
 };
@@ -29,14 +29,8 @@ const contacts: Contact[] = [
     email: "dzinz@pp.rr.com",
   },
   {
-    name: "Laura Stump",
     title: "May Garden Mart",
-    email: "lulustump@gmail.com",
-  },
-  {
-    name: "Rebecca Fletcher",
-    title: "May Garden Mart",
-    email: "rjstump@gmail.com",
+    email: "fgamaymart@gmail.com",
   },
 ];
 
