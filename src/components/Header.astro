@@ -2,25 +2,7 @@
 import Logo from "../assets/logo.png";
 import FB from "../assets/fb.png";
 import Pinterest from "../assets/pinterest.png";
-type NavLink = {
-  text: string;
-  href: string;
-  logo?: string;
-};
-const links: NavLink[] = [
-  {
-    text: "Home",
-    href: "/",
-  },
-  {
-    text: "People",
-    href: "/contact",
-  },
-  {
-    text: "May Garden Mart 2023",
-    href: "/mart",
-  },
-];
+import { NavLink, links } from "../utils";
 const socials: NavLink[] = [
   {
     text: "Facebook",
@@ -77,7 +59,7 @@ const socials: NavLink[] = [
           <a
             href={l.href}
             class="mx-4 my-2 md:my-0 text-white text-sm md:text-xl hover:underline font-semibold text-left drop-shadow-[0_2.8px_2.8px_rgba(0,0,0,1)] transition duration-100 hover:scale-110"
-	    title={l.text}
+            title={l.text}
           >
             <img src={l.logo} class="h-8" alt={l.text} />
           </a>

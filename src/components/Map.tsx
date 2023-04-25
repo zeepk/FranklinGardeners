@@ -1,11 +1,14 @@
 import BoothSquare from "./BoothSquare";
-import { booths } from "../utils";
+import type { Booth } from "../utils";
 import BlankMap from "../assets/map2.png";
 import RestroomSymbol from "../assets/restroom.png";
 
-type Props = { selectedBoothId: number };
+type Props = {
+  vendors: Booth[];
+  selectedBoothId: number;
+};
 
-export default function Map({ selectedBoothId }: Props) {
+export default function Map({ vendors, selectedBoothId }: Props) {
   return (
     <div className="h-[930px] relative md:overflow-y-visible md:overflow-x-scroll overflow-scroll">
       <div className="relative map w-[1151px] h-[889px]">
@@ -14,7 +17,7 @@ export default function Map({ selectedBoothId }: Props) {
           src={RestroomSymbol}
           className="absolute top-[110px] right-[20px] w-10 h-10"
         />
-        {booths
+        {vendors
           .filter((t) => t.name)
           .map((t, i) => (
             <BoothSquare

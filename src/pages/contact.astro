@@ -35,25 +35,41 @@ const contacts: Contact[] = [
 ];
 
 const members: Contact[] = [
-   { name: 'Susie Blair', title: 'President' },
-  { name: 'Barry Wilson', title: 'Vice President' },
-  { name: 'Susan Hilton', title: 'Secretary' },
-  { name: 'Cindi Ruditis', title: 'Treasurer' },
-  { name: 'Shirley Peters', title: 'Membership' },
-  { name: 'Kathie Zinz', title: 'Membership' },
-  { name: 'Lil Gammello', title: 'Ways & Means' },
-  { name: 'Donna Ostereid', title: 'Ways & Means' },
-  { name: 'Rebecca Witherup', title: 'Newsletter' },
-  { name: 'Michelle Reck', title: 'Newsletter' },
-  { name: 'Terri Wittreich', title: 'Publicity & Promotion' },
-  { name: 'Rebecca Witherup', title: 'Publicity & Promotion' }
+  { name: "Susie Blair", title: "President" },
+  { name: "Barry Wilson", title: "Vice President" },
+  { name: "Susan Hilton", title: "Secretary" },
+  { name: "Cindi Ruditis", title: "Treasurer" },
+  { name: "Shirley Peters", title: "Membership" },
+  { name: "Kathie Zinz", title: "Membership" },
+  { name: "Lil Gammello", title: "Ways & Means" },
+  { name: "Donna Ostereid", title: "Ways & Means" },
+  { name: "Rebecca Witherup", title: "Newsletter" },
+  { name: "Michelle Reck", title: "Newsletter" },
+  { name: "Terri Wittreich", title: "Publicity & Promotion" },
+  { name: "Rebecca Witherup", title: "Publicity & Promotion" },
 ];
+
+const membershipFormLink =
+  "https://drive.google.com/uc?export=download&id=1LugtqeqZS7Z2E9SNnb05nItMKC2wmi9I";
 ---
 
 <Layout title="Franklin Gardeners Contact Information">
   <main
     class="md:py-12 pt-12 mb-80 px-4 main w-screen flex flex-col align-center items-center"
   >
+    <div
+      class="w-full mb-16 max-w-[500px] flex flex-col text-xl items-center justify-between"
+    >
+      <h2 class="text-text-500 mb-4 text-center font-semibold text-4xl">
+        We'd love for you to join us!
+      </h2>
+      <p>
+        For a membership form, <a
+          class="hover:underline text-blue-600"
+          href={membershipFormLink}>click here!</a
+        >
+      </p>
+    </div>
     <h2 class="text-text-500 mb-16 text-center font-semibold text-4xl">
       Contact Information
     </h2>
@@ -66,7 +82,10 @@ const members: Contact[] = [
             <div class="font-semibold">{contact.title}</div>
             <div class="flex flex-col text-right">
               <div class="font-semibold">{contact.name}</div>
-              <a class="hover:underline font-normal text-lg md:text-xl" href={`mailto:${contact.email}`}>
+              <a
+                class="hover:underline font-normal text-lg md:text-xl"
+                href={`mailto:${contact.email}`}
+              >
                 {contact.email}
               </a>
             </div>

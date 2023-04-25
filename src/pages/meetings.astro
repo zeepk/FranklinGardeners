@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PublicGoogleSheetsParser from "public-google-sheets-parser";
+
+type Meeting = {
+  title: string;
+  date: Date;
+  time?: string;
+  location?: string;
+  details?: string;
+};
+
+var eventsSheetId = "1DNcI30cMqlvmHh3CcZx1yWWKD6zRiZZveo2kRgnq98M";
+
+const parser = new PublicGoogleSheetsParser();
+const items: Meeting[] = await parser.parse(eventsSheetId, "Meetings");
+const meetings = items.sort(
+  (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+);
+---
+
+<Layout title="Franklin Gardeners Meetings Information">
+  <main
+    class="md:py-12 pt-12 mb-80 px-4 main w-screen flex flex-col align-center items-center"
+  >
+    <h2 class="text-text-500 mb-16 text-center font-semibold text-4xl">
+      Upcoming Meetings
+    </h2>
+    <div
+      class="w-full mb-8 max-w-[700px] flex flex-col text-xl items-center justify-between"
+    >
+      {
+        meetings.map((m) => (
+          <div class="bg-bg-400 rounded my-4 p-4 flex md:flex-row flex-col items-center justify-between w-full">
+            <div class="text-center md:text-left md:w-6/12">
+              <div class="font-semibold">{m.title}</div>
+              <div>{m.details}</div>
+            </div>
+            <div class="md:text-right text-center mt-8 md:mt-0">
+              <div>
+                {m.date} {m.time ? "at" : ""} {m.time}
+              </div>
+              <div>{m.location}</div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </main>
+</Layout>

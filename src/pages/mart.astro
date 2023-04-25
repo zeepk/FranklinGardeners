@@ -1,6 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MapContainer from "../components/MapContainer";
+import PublicGoogleSheetsParser from "public-google-sheets-parser";
+import { booths } from "../utils";
+
+var eventsSheetId = "1DNcI30cMqlvmHh3CcZx1yWWKD6zRiZZveo2kRgnq98M";
+
+type RawVendor = {
+  site: number;
+  name: string;
+  description: string;
+};
+
+const parser = new PublicGoogleSheetsParser();
+const items: RawVendor[] = await parser.parse(eventsSheetId, "Mart");
+const vendors = booths.map((booth) => {
+  const vendor = items.find((item) => item.site === booth.id);
+  return {
+    ...booth,
+    name: vendor?.name,
+    description: vendor?.description,
+  };
+});
 ---
 
 <Layout title="May Garden Mart 2023">
@@ -22,7 +43,7 @@ import MapContainer from "../components/MapContainer";
       </div>
     </div>
     <div class="w-11/12 md:cursor-auto cursor-grab">
-      <MapContainer client:load />
+      <MapContainer vendors={vendors} client:load />
     </div>
   </main>
 

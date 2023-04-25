@@ -1,3 +1,45 @@
+export const getNextMemberMeetingDate = (date: Date) => {
+  // gets the 2nd wednesday of the month
+  const nextMeetingDate = new Date(date);
+  nextMeetingDate.setDate(1);
+  nextMeetingDate.setMonth(nextMeetingDate.getMonth() + 1);
+  while (nextMeetingDate.getDay() !== 3) {
+    nextMeetingDate.setDate(nextMeetingDate.getDate() + 1);
+  }
+  nextMeetingDate.setDate(nextMeetingDate.getDate() + 7);
+  return nextMeetingDate;
+};
+
+export type NavLink = {
+  text: string;
+  href: string;
+  logo?: string;
+  color?: string;
+};
+
+export const links: NavLink[] = [
+  {
+    text: "Home",
+    href: "/",
+    color: "text-pink",
+  },
+  {
+    text: "People",
+    href: "/contact",
+    color: "text-pink",
+  },
+  {
+    text: "May Garden Mart 2023",
+    href: "/mart",
+    color: "text-pink",
+  },
+  {
+    text: "Meetings",
+    href: "/meetings",
+    color: "text-pink",
+  },
+];
+
 export type Booth = {
   id: number;
   xOffset: number;
