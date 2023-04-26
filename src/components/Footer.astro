@@ -1,5 +1,9 @@
 ---
 import { links } from "../utils";
+const footerLinks = [
+  ...links,
+  { text: "Made with ❤️ ", href: "https://github.com/zeepk/FranklinGardeners" },
+];
 ---
 
 <div
@@ -12,7 +16,7 @@ import { links } from "../utils";
     class="flex flex-col md:flex-row items-center text-center justify-center w-full h-full"
   >
     {
-      links.map((l) => (
+      footerLinks.map((l) => (
         <a href={l.href} class={`${l.color} md:p-4 p-1 hover:underline`}>
           {l.text}
         </a>
