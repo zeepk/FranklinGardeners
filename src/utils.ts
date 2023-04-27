@@ -24,7 +24,7 @@ export const links: NavLink[] = [
     color: "text-pink",
   },
   {
-    text: "People",
+    text: "Gardeners",
     href: "/contact",
     color: "text-pink",
   },
