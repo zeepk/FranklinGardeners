@@ -1,0 +1,66 @@
+---
+import type { HTMLInputTypeAttribute } from "react";
+type Field = {
+  id: string;
+  label: string;
+  type: HTMLInputTypeAttribute;
+};
+
+const fields: Field[] = [
+  {
+    id: "name",
+    label: "Name",
+    type: "text",
+  },
+  {
+    id: "business",
+    label: "Business name",
+    type: "text",
+  },
+  { id: "product", label: "What are you selling?", type: "text" },
+  {
+    id: "email",
+    label: "Email",
+    type: "email",
+  },
+  {
+    id: "phone",
+    label: "Phone",
+    type: "tel",
+  },
+  {
+    id: "address",
+    label: "Mailing address",
+    type: "text",
+  },
+];
+---
+
+<div class="flex flex-col w-screen items-center">
+  <form name="contact" data-netlify="true" class="w-11/12 max-w-[500px]">
+    {
+      fields.map((field) => (
+        <div class="flex flex-col mb-4">
+          <label for={field.id}>{field.label}</label>
+          <input type={field.type} name={field.id} required />
+        </div>
+      ))
+    }
+    <div class="mb-4 mt-0 text-sm">
+      <i>All above fields are required</i>
+    </div>
+    <div class="flex flex-col mb-4">
+      <label for="other">Additional comments:</label>
+      <textarea name="other" required></textarea>
+    </div>
+    <button class="submit font-bold py-2 px-4 rounded" type="submit"
+      >Send</button
+    >
+  </form>
+</div>
+
+<style>
+  .submit {
+    background-color: forestgreen;
+  }
+</style>
