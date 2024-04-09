@@ -29,7 +29,7 @@ export const links: NavLink[] = [
     color: "text-pink",
   },
   {
-    text: "May Garden Mart 2023",
+    text: "May Garden Mart",
     href: "/mart",
     color: "text-pink",
   },
